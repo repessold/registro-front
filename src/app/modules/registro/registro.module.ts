@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { RegistroRoutingModule } from './registro-routing.module';
 import { NovoRegistroComponent } from './novo-registro/novo-registro.component';
+import { SharedModule } from 'src/assets/shared/shared.module';
 
 
 @NgModule({
@@ -11,7 +12,9 @@ import { NovoRegistroComponent } from './novo-registro/novo-registro.component';
   ],
   imports: [
     CommonModule,
-    RegistroRoutingModule
+    RegistroRoutingModule,
+    SharedModule
+
   ]
 })
 export class RegistroModule { }
