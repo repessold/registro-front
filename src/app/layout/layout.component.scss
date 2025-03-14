@@ -11,3 +11,16 @@ mat-toolbar {
   background-color: rgb(255, 14, 24);
   height: 2.4px;
 }
+
+.sidenav {
+  height: 100%;
+  width: 250px;
+  background-color: lightgray;
+
+  a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    text-align: center;
+  }
+}

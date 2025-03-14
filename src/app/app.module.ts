@@ -6,6 +6,11 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutComponent } from './layout/layout.component';
 import { SharedModule } from 'src/assets/shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
+import { NgxMaskDirective, NgxMaskPipe } from 'ngx-mask';
+import { provideNgxMask } from 'ngx-mask';
+
+
 
 @NgModule({
   declarations: [
@@ -13,11 +18,18 @@ import { SharedModule } from 'src/assets/shared/shared.module';
     LayoutComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule, SharedModule
+    BrowserAnimationsModule,
+    SharedModule,
+    NgxMaskDirective,
+    NgxMaskPipe,
+    // NgxMaskModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    provideNgxMask(),
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

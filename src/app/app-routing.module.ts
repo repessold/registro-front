@@ -17,6 +17,10 @@ const routes: Routes = [
         path: 'novo-registro',
         loadChildren: () => import('./modules/registro/registro.module').then((m) => m.RegistroModule)
       },
+      {
+        path: 'grafico',
+        loadChildren: () => import('./modules/registro/registro.module').then((m) => m.RegistroModule)
+      }
     ]
   }
 ];

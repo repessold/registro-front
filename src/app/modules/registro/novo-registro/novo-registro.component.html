@@ -1,177 +1,151 @@
-<mat-toolbar class="line">Produtividade Diária</mat-toolbar>
 <div>
   <form [formGroup]="formGroup">
     <mat-horizontal-stepper #stepper>
-      <!-- <mat-stepper orientation="vertical" #stepper> -->
       <mat-step [stepControl]="firstFormGroup">
         <form [formGroup]="firstFormGroup">
-          <ng-template matStepLabel class="mat-step-icon-selected">Vtr</ng-template>
-
-          <!-- <mat-form-field>
-          <mat-label>First Name</mat-label>
-          <input matInput formControlName="firstName" required>
-        </mat-form-field> -->
-
+          <ng-template matStepLabel class="mat-step-icon-selected">Viatura</ng-template>
+          <mat-form-field appearance="outline">
+            <mat-label>Selecione a Viatura</mat-label>
+            <mat-select formControlName="viatura">
+              <mat-option *ngFor="let viatura of viaturas" [value]="viatura">
+                {{ viatura }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
           <div>
-            <button mat-button matStepperNext>Next</button>
+            <button mat-button matStepperNext [disabled]="firstFormGroup.invalid">
+              Próximo
+            </button>
           </div>
         </form>
       </mat-step>
-
 
       <mat-step [stepControl]="secondFormGroup">
         <form [formGroup]="secondFormGroup" class="FormGroup">
           <ng-template matStepLabel>Abordagem</ng-template>
-
           <mat-form-field appearance="outline">
             <mat-label>Pessoa sem Criminal:</mat-label>
-            <input matInput formControlName="pessoasSemCriminal">
+            <input matInput formControlName="pessoasSemCriminal" type="number">
           </mat-form-field>
-
           <mat-form-field appearance="outline">
             <mat-label>Pessoa com Criminal:</mat-label>
-            <input matInput formControlName="pessoasComCriminal">
+            <input matInput formControlName="pessoasComCriminal" type="number">
           </mat-form-field>
-
           <mat-form-field appearance="outline">
             <mat-label>Motos:</mat-label>
-            <input matInput formControlName="motos">
+            <input matInput formControlName="motos" type="number">
           </mat-form-field>
-
           <mat-form-field appearance="outline">
             <mat-label>Carros:</mat-label>
-            <input matInput formControlName="carros">
+            <input matInput formControlName="carros" type="number">
           </mat-form-field>
-
           <mat-form-field appearance="outline">
             <mat-label>Ônibus:</mat-label>
-            <input matInput formControlName="onibus">
+            <input matInput formControlName="onibus" type="number">
           </mat-form-field>
-
           <mat-form-field appearance="outline">
             <mat-label>Taxis:</mat-label>
-            <input matInput formControlName="taxis">
+            <input matInput formControlName="taxis" type="number">
           </mat-form-field>
-
           <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
+            <button mat-button matStepperPrevious>Voltar</button>
+            <button mat-button matStepperNext>Próximo</button>
           </div>
         </form>
       </mat-step>
-
 
       <mat-step [stepControl]="thirdFormGroup">
         <form [formGroup]="thirdFormGroup" class="FormGroup">
           <ng-template matStepLabel>Ocorrência</ng-template>
-
           <mat-form-field appearance="outline">
             <mat-label>Flagrantes:</mat-label>
-            <input matInput formControlName="flagrantes">
+            <input matInput formControlName="flagrantes" type="number">
           </mat-form-field>
-
           <mat-form-field appearance="outline">
             <mat-label>Flagrantes de Roubo:</mat-label>
-            <input matInput formControlName="flagrantesDeRoubo">
+            <input matInput formControlName="flagrantesDeRoubo" type="number">
           </mat-form-field>
-
           <mat-form-field appearance="outline">
             <mat-label>Ocorrências Atendidas:</mat-label>
-            <input matInput formControlName="ocorrenciasAtendidas">
+            <input matInput formControlName="ocorrenciasAtendidas" type="number">
           </mat-form-field>
-
           <mat-form-field appearance="outline">
             <mat-label>Contravenções:</mat-label>
-            <input matInput formControlName="contravencoes">
+            <input matInput formControlName="contravencoes" type="number">
           </mat-form-field>
-
           <mat-form-field appearance="outline">
             <mat-label>Ato Infracional Roubo:</mat-label>
-            <input matInput formControlName="atoInfracionalRoubo">
+            <input matInput formControlName="atoInfracionalRoubo" type="number">
           </mat-form-field>
-
           <mat-form-field appearance="outline">
             <mat-label>Ato Infracional:</mat-label>
-            <input matInput formControlName="atoInfracional">
+            <input matInput formControlName="atoInfracional" type="number">
           </mat-form-field>
           <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
+            <button mat-button matStepperPrevious>Voltar</button>
+            <button mat-button matStepperNext>Próximo</button>
           </div>
         </form>
       </mat-step>
-
 
       <mat-step [stepControl]="fourthFormGroup">
         <form [formGroup]="fourthFormGroup" class="FormGroup">
           <ng-template matStepLabel>Presos</ng-template>
-
           <mat-form-field appearance="outline">
             <mat-label>Presos em flagrante:</mat-label>
-            <input matInput formControlName="presosEmFlagrante">
+            <input matInput formControlName="presosEmFlagrante" type="number">
           </mat-form-field>
-
           <mat-form-field appearance="outline">
             <mat-label>Sindicados:</mat-label>
-            <input matInput formControlName="sindicados">
+            <input matInput formControlName="sindicados" type="number">
           </mat-form-field>
-
           <mat-form-field appearance="outline">
             <mat-label>Recapturados:</mat-label>
-            <input matInput formControlName="recapturados">
+            <input matInput formControlName="recapturados" type="number">
           </mat-form-field>
-
           <mat-form-field appearance="outline">
             <mat-label>Armas:</mat-label>
-            <input matInput formControlName="armas">
+            <input matInput formControlName="armas" type="number">
           </mat-form-field>
-
           <mat-form-field appearance="outline">
             <mat-label>Drogas:</mat-label>
-            <input matInput formControlName="drogas">
+            <input matInput formControlName="drogas" type="number">
           </mat-form-field>
-
-
           <mat-form-field appearance="outline">
             <mat-label>Auto Localizado:</mat-label>
-            <input matInput formControlName="autoLocalizado">
+            <input matInput formControlName="autoLocalizado" type="number">
           </mat-form-field>
-
           <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
+            <button mat-button matStepperPrevious>Voltar</button>
+            <button mat-button matStepperNext>Próximo</button>
           </div>
         </form>
       </mat-step>
 
-
       <mat-step [stepControl]="fifthFormGroup">
         <form [formGroup]="fifthFormGroup" class="FormGroup">
           <ng-template matStepLabel>Drogas</ng-template>
-
           <mat-form-field appearance="outline">
-            <mat-label>Maconha:</mat-label>
-            <input matInput formControlName="maconhaKg">
-          </mat-form-field>
+            <mat-label>Maconha (kg):</mat-label>
+            <input matInput formControlName="maconhaKg" suffix=" kg">
 
+            <input matInput formControlName="maconhaKg" type="text" ngxMask="separator.2" suffix=" kg">
+          </mat-form-field>
           <mat-form-field appearance="outline">
-            <mat-label>Cocaína:</mat-label>
-            <input matInput formControlName="cocainaKg">
+            <mat-label>Cocaína (kg):</mat-label>
+            <input matInput formControlName="cocainaKg" type="text" ngxMask="separator.2" suffix=" kg">
           </mat-form-field>
-
           <mat-form-field appearance="outline">
-            <mat-label>Crack:</mat-label>
-            <input matInput formControlName="crackKg">
+            <mat-label>Crack (kg):</mat-label>
+            <input matInput formControlName="crackKg" type="text" ngxMask="separator.2" suffix=" kg">
           </mat-form-field>
-
           <mat-form-field appearance="outline">
-            <mat-label>Total:</mat-label>
-            <input matInput formControlName="totalKg">
+            <mat-label>Total (kg):</mat-label>
+            <input matInput formControlName="totalKg" type="text" ngxMask="separator.2" suffix=" kg">
           </mat-form-field>
-
           <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
+            <button mat-button matStepperPrevious>Voltar</button>
+            <button mat-button matStepperNext>Próximo</button>
           </div>
         </form>
       </mat-step>
@@ -179,29 +153,25 @@
       <mat-step [stepControl]="sixthFormGroup">
         <form [formGroup]="sixthFormGroup" class="FormGroup">
           <ng-template matStepLabel>Trânsito</ng-template>
-
           <mat-form-field appearance="outline">
             <mat-label>Carro Apreendido:</mat-label>
-            <input matInput formControlName="carroAprendido">
+            <input matInput formControlName="carroAprendido" type="number">
           </mat-form-field>
-
           <mat-form-field appearance="outline">
             <mat-label>Moto Apreendida:</mat-label>
-            <input matInput formControlName="motoAprendido">
+            <input matInput formControlName="motoAprendido" type="number">
           </mat-form-field>
-
           <mat-form-field appearance="outline">
             <mat-label>Auto de Infração de Trânsito:</mat-label>
-            <input matInput formControlName="ait">
+            <input matInput formControlName="ait" type="number">
           </mat-form-field>
-
           <mat-form-field appearance="outline">
             <mat-label>Carga/Reboque/Recolhimento:</mat-label>
-            <input matInput formControlName="crr">
+            <input matInput formControlName="crr" type="number">
           </mat-form-field>
           <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
+            <button mat-button matStepperPrevious>Voltar</button>
+            <button mat-button matStepperNext>Próximo</button>
           </div>
         </form>
       </mat-step>
@@ -209,25 +179,21 @@
       <mat-step [stepControl]="seventhFormGroup">
         <form [formGroup]="seventhFormGroup" class="FormGroup">
           <ng-template matStepLabel>Rondas</ng-template>
-
           <mat-form-field appearance="outline">
             <mat-label>Bancárias:</mat-label>
-            <input matInput formControlName="bancarias">
+            <input matInput formControlName="bancarias" type="number">
           </mat-form-field>
-
           <mat-form-field appearance="outline">
             <mat-label>Comerciais:</mat-label>
-            <input matInput formControlName="comerciais">
+            <input matInput formControlName="comerciais" type="number">
           </mat-form-field>
-
           <mat-form-field appearance="outline">
             <mat-label>Escolar:</mat-label>
-            <input matInput formControlName="escolar">
+            <input matInput formControlName="escolar" type="number">
           </mat-form-field>
-
           <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
+            <button mat-button matStepperPrevious>Voltar</button>
+            <button mat-button matStepperNext>Próximo</button>
           </div>
         </form>
       </mat-step>
@@ -235,20 +201,17 @@
       <mat-step [stepControl]="eighthFormGroup">
         <form [formGroup]="eighthFormGroup" class="FormGroup">
           <ng-template matStepLabel>Operação</ng-template>
-
           <mat-form-field appearance="outline">
             <mat-label>Visibilidade:</mat-label>
-            <input matInput formControlName="visibilidade">
+            <input matInput formControlName="visibilidade" type="number">
           </mat-form-field>
-
           <mat-form-field appearance="outline">
             <mat-label>Bloqueio:</mat-label>
-            <input matInput formControlName="bloqueio">
+            <input matInput formControlName="bloqueio" type="number">
           </mat-form-field>
-
           <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
+            <button mat-button matStepperPrevious>Voltar</button>
+            <button mat-button matStepperNext>Próximo</button>
           </div>
         </form>
       </mat-step>
@@ -256,53 +219,37 @@
       <mat-step [stepControl]="ninthFormGroup">
         <form [formGroup]="ninthFormGroup" class="FormGroup">
           <ng-template matStepLabel>Documento</ng-template>
-
           <mat-form-field appearance="outline">
             <mat-label>Boletim de Ocorrência PM:</mat-label>
-            <input matInput formControlName="bopm">
+            <input matInput formControlName="bopm" type="number">
           </mat-form-field>
-
           <mat-form-field appearance="outline">
             <mat-label>Boletim de Ocorrência PC:</mat-label>
-            <input matInput formControlName="bopc">
+            <input matInput formControlName="bopc" type="number">
           </mat-form-field>
-
           <mat-form-field appearance="outline">
             <mat-label>Registro de Ações Integradas:</mat-label>
-            <input matInput formControlName="raiia">
+            <input matInput formControlName="raiia" type="number">
           </mat-form-field>
-
           <mat-form-field appearance="outline">
             <mat-label>Partes envolvidas:</mat-label>
-            <input matInput formControlName="partes">
+            <input matInput formControlName="partes" type="number">
           </mat-form-field>
-
           <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
+            <button mat-button matStepperPrevious>Voltar</button>
+            <button mat-button matStepperNext>Próximo</button>
           </div>
         </form>
       </mat-step>
 
-
-
-
-
-
-
-
-
       <mat-step>
-        <ng-template matStepLabel>Done</ng-template>
-        <p>Registro preenchido.
-          Clique em enviar para finalizar o registro.
-        </p>
+        <ng-template matStepLabel>Fim</ng-template>
+        <p>Registro preenchido. Clique em enviar para finalizar o registro.</p>
         <div>
-          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperPrevious>Voltar</button>
           <button mat-button (click)="onSubmit()">Enviar</button>
         </div>
       </mat-step>
-      <!-- </mat-stepper> -->
     </mat-horizontal-stepper>
   </form>
 </div>

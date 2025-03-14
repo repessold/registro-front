@@ -7,6 +7,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSelectModule } from '@angular/material/select';
+
+
+
+
 
 
 const COMMONS = [
@@ -15,7 +23,11 @@ const COMMONS = [
   MatButtonModule,
   MatStepperModule,
   MatInputModule,
-  ReactiveFormsModule
+  ReactiveFormsModule,
+  MatSidenavModule,
+  MatListModule,
+  MatSnackBarModule,
+  MatSelectModule
 ]
 
 
