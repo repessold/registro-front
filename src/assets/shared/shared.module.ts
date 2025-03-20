@@ -11,7 +11,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSelectModule } from '@angular/material/select';
-
+import { NgChartsModule } from 'ng2-charts';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 
 
@@ -27,7 +29,11 @@ const COMMONS = [
   MatSidenavModule,
   MatListModule,
   MatSnackBarModule,
-  MatSelectModule
+  MatSelectModule,
+  NgChartsModule,
+  MatNativeDateModule,
+  MatDatepickerModule
+
 ]
 
 

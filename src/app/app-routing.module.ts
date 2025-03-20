@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
+import { GraficoComponent } from './modules/registro/grafico/grafico.component';
 
 const routes: Routes = [
-
   {
     path: '',
     component: LayoutComponent,
@@ -17,9 +17,18 @@ const routes: Routes = [
         path: 'novo-registro',
         loadChildren: () => import('./modules/registro/registro.module').then((m) => m.RegistroModule)
       },
+      // {
+      //   path: 'grafico',
+      //   loadChildren: () => import('./modules/registro/registro.module').then((m) => m.RegistroModule)
+      // }
+    ]
+  }, {
+    path: 'grafico',
+    component: LayoutComponent,
+    children: [
       {
-        path: 'grafico',
-        loadChildren: () => import('./modules/registro/registro.module').then((m) => m.RegistroModule)
+        path: '',
+        component: GraficoComponent
       }
     ]
   }

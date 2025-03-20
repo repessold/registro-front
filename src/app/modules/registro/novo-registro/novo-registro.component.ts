@@ -70,10 +70,10 @@ export class NovoRegistroComponent implements OnInit {
       // crackKg: [undefined, Validators.pattern('^[0-9]*$')],
       // totalKg: [undefined, Validators.pattern('^[0-9]*$')],
 
-      maconhaKg: [''],
-      cocainaKg: [''],
-      crackKg: [''],
-      totalKg: [''],
+      maconhaKg: [],
+      cocainaKg: [],
+      crackKg: [],
+      totalKg: [],
     });
 
     this.sixthFormGroup = this.formBuilder.group({

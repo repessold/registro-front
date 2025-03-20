@@ -10,7 +10,7 @@ import { GraficoComponent } from './grafico/grafico.component';
 @NgModule({
   declarations: [
     NovoRegistroComponent,
-    GraficoComponent
+    GraficoComponent,
   ],
   imports: [
     CommonModule,

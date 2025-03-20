@@ -7,9 +7,21 @@ mat-toolbar {
   color: white;
 }
 
+span {
+  cursor: pointer;
+}
+
 .line {
   background-color: rgb(255, 14, 24);
   height: 2.4px;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+
 }
 
 .sidenav {

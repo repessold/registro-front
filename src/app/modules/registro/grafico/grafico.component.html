@@ -1,1 +1,18 @@
-<p>grafico works!</p>
+<div>
+  <form [formGroup]="formGroup">
+    <mat-form-field appearance="outline" class="datepicker">
+      <mat-label>Data: Início e Fim</mat-label>
+      <mat-date-range-input [rangePicker]="picker" formGroupName="data">
+        <input matStartDate placeholder="Data de Início" formControlName="inicio">
+        <input matEndDate placeholder="Data de Fim" formControlName="fim">
+      </mat-date-range-input>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
+    <button mat-raised-button (click)="carregarDados()">Gerar Gráfico</button>
+  </form>
+</div>
+
+<div class="container">
+  <canvas baseChart class="grafico" [data]="barChartData" [options]="barChartOptions" [type]="'bar'"></canvas>
+</div>

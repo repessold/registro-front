@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  height: 500px;
+}
+
+.datepicker {
+  padding: 20px;
+}
+
+.botao{
+  padding: 20px;
+}
+
+// .grafico {
+//   height: 90%;
+//   width: 500px;
+// }
+
+// .container {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   height: 70%; /* Ajusta a altura do contêiner */
+// }
+
+// .grafico {
+//   max-width: 400px; /* Define a largura máxima do gráfico */
+//   max-height: 400px; /* Define a altura máxima do gráfico */
+//   width: 100%; /* Faz o gráfico se ajustar ao contêiner */
+//   height: auto; /* Mantém a proporção do gráfico */
+// }

@@ -11,7 +11,8 @@ export class SnackbarService {
   public showCreate() {
     return this.snackBar.open(`Cadastrado com sucesso!`, 'Fechar', {
       duration: 6000,
-      horizontalPosition:'center',
+      horizontalPosition: 'center',
+      verticalPosition: 'top',
     });
   }
 
@@ -19,6 +20,8 @@ export class SnackbarService {
     return this.snackBar.open(` Alterado com sucesso!`, 'Fechar', {
       duration: 6000,
       horizontalPosition: 'center',
+      verticalPosition: 'top',
+
     });
   }
 
